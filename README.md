@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# BitaHealth Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+BitaHealth es la interfaz web de una herramienta integral para el análisis de señales biométricas (ECG y HRV) que utiliza inteligencia artificial. Esta aplicación, desarrollada con React (Create React App), permite a los usuarios:
 
-## Available Scripts
+- Subir archivos TXT de BITalino (y opcionalmente archivos H5) para analizar la señal.
+- Visualizar los resultados del análisis, que incluyen métricas de HRV y diversos gráficos generados por el backend.
+- Consultar gráficos resumen (gráfico circular y gráfico de barras) que muestran la distribución de las predicciones de la IA.
+- Descargar un informe en formato PDF que incluye todos los resultados y gráficos generados.
 
-In the project directory, you can run:
+## Características
 
-### `npm start`
+- **Carga de archivos:** Permite la subida del archivo TXT (y opcionalmente H5) para enviar al servidor Flask.
+- **Visualización de resultados:** Muestra el resultado textual del modelo de IA, gráficos generados en el backend (señal ECG limpia, segmento ampliado, serie de intervalos RR, Poincaré plot, histograma, espectro FFT, etc.) y gráficos resumen (pastel y barras) basados en las predicciones.
+- **Descarga de informe PDF:** Opción para exportar en PDF todo el contenido mostrado en la interfaz.
+- **Interfaz moderna y minimalista:** Diseñada con CSS personalizado y utilizando componentes de ChartJS para la visualización de datos.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Instalación
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Asegúrate de tener [Node.js](https://nodejs.org/) instalado. Luego, sigue estos pasos:
 
-### `npm test`
+1. Clona el repositorio o descarga el código fuente.
+2. Abre una terminal en la carpeta del proyecto y ejecuta:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```bash
+   npm install
 
-### `npm run build`
+Esto instalará todas las dependencias necesarias.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Las dependencias principales incluyen:
+- React (Create React App)
+- react-chartjs-2 y chart.js para gráficos.
+- jsPDF y html2canvas para la generación del PDF.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Uso
+Inicia el servidor de desarrollo:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   npm start
+  ```
+Abre tu navegador en http://localhost:3000.
 
-### `npm run eject`
+Utiliza la interfaz para:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Subir el archivo TXT de BITalino.
+- Visualizar los resultados y gráficos generados por el backend.
+- Descargar el informe PDF mediante el botón "Descargar Informe PDF".
+- Reiniciar la medición usando el botón "Volver a hacer otra medición".
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Comunicación con el Backend
+La aplicación se comunica con un servidor Flask (configurado en otro repositorio o carpeta) que procesa el archivo subido, segmenta la señal en ventanas, calcula las métricas HRV, ejecuta el modelo de IA y genera gráficos. Asegúrate de que el servidor Flask esté corriendo (por defecto en http://localhost:5000/upload) para que el frontend pueda enviar los archivos y recibir los resultados.
