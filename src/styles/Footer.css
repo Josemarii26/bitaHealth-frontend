@@ -1,0 +1,12 @@
+.footer {
+    width: 100%;            /* Ocupa todo el ancho */
+    background-color: #285a37; /* Color de fondo oscuro */
+    color: #fff;            /* Texto blanco */
+    padding-top: 10px;     /* Espaciado interno */
+    padding-bottom: 10px;
+    font-size: 14px;        /* Tamaño de fuente */
+    font-weight: bold;      /* Texto en negrita */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3); /* Sombra superior */
+
+  }
+  

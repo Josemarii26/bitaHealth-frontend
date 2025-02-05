@@ -1,0 +1,62 @@
+.info-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.322);
+  margin: 2rem auto;
+  max-width: 1200px;
+  margin-top: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  /* Transición suave para el efecto hover */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover de escalado */
+.info-section:hover {
+  transform: scale(1.05); /* Aumenta el tamaño un 5% */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Mejora el efecto visual */
+}
+
+.info-image {
+  flex: 1;
+  min-width: 300px;
+  max-height: 329px;
+}
+
+.info-image video {
+  width: 100%;
+  padding: 0;
+  border-radius: 10px 0 0 10px;
+}
+
+.info-image2 {
+  flex: 1;
+  min-width: 300px;
+  max-height: 329px;
+}
+
+.info-image2 video {
+  width: 100%;
+  padding: 0;
+  border-radius: 0 10px 10px 0;
+}
+
+.info-text {
+  flex: 1;
+  min-width: 300px;
+  padding: 1rem;
+}
+
+.info-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #2d3748;
+}
+
+.info-text p {
+  font-size: 1rem;
+  color: #4a5568;
+  line-height: 1.5;
+}
